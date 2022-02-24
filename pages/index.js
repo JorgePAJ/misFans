@@ -1,5 +1,6 @@
 import imagePlace from "../public/placeholder.png";
 import Image from "next/image";
+import Head from "next/head";
 import React, { useEffect, useState } from "react";
 
 export default function Home() {
@@ -10,6 +11,9 @@ export default function Home() {
   return (
     // Main div
     <div>
+      <Head>
+        <title>MisFans | Donacion</title>
+      </Head>
       {/* // Username div */}
       <p>{username}</p>
       <Image src={imagePlace} width="100%" height="100%"></Image>
