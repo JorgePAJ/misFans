@@ -2,8 +2,14 @@ import imagePlace from "../public/placeholder.png";
 import Image from "next/image";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
+import Form from "../components/form";
+import {name,message} from"../constants/global"
+
 
 export default function Home() {
+
+
+
   const username = "Jorge Plasencia";
   const [nombre, setNombre] = useState("Default");
   const [cantidad, setCantidad] = useState(10);
@@ -64,16 +70,8 @@ export default function Home() {
         <div>
           {/* // Nombre y Mensaje Div */}
           <div>
-            {/* // Nombre div */}
-            <div>
-              <h5>Tu nombre</h5>
-              <p>aqui va un form</p>
-            </div>
-            {/* // Mensaje div */}
-            <div>
-              <h5>Escribe un mensaje</h5>
-              <p>aqui va un form</p>
-            </div>
+            <Form name={username} />
+            <p></p>
           </div>
           {/* // Sonidos div */}
           <div>
