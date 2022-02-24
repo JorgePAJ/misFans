@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 export default function Home() {
   const username = "Jorge Plasencia";
   const [nombre, setNombre] = useState("Default");
-  const [cantidad, setCantidad] = useState(0);
+  const [cantidad, setCantidad] = useState(10);
   const [sonido, setSonido] = useState("Sound 1");
   return (
     // Main div
