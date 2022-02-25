@@ -3,17 +3,16 @@ import Image from "next/image";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import Form from "../components/form";
-import {name,message} from"../constants/global"
+import { UsuarioProvider, useUsuario } from "../Context/usuario-context";
 
+export default () => <UsuarioProvider>
+  <Home></Home>
+</UsuarioProvider>
 
-export default function Home() {
+function Home() {
 
-
-
-  const username = "Jorge Plasencia";
-  const [nombre, setNombre] = useState("Default");
-  const [cantidad, setCantidad] = useState(10);
-  const [sonido, setSonido] = useState("Sound 1");
+  const {username, cantidad,setCantidad,name} = useUsuario()
+  console.log(name.name)
   return (
     // Main div
     <div>
@@ -22,6 +21,7 @@ export default function Home() {
       </Head>
       {/* // Username div */}
       <p>{username}</p>
+      <p>{}</p>
       <Image src={imagePlace} width="100%" height="100%"></Image>
       <div></div>
       {/* // Elements div */}

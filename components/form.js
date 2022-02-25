@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import ReactDom from "react-dom";
 import { useFormik } from "formik";
-import { name, message } from "../constants/global";
+import { useUsuario } from "../Context/usuario-context";
 
-function Forms(props) {
-  const nameProp = props.name;
+function Forms() {
+  var { name, message } = useUsuario();
+  const { setName, setMessage } = useUsuario();
   const formik = useFormik({
     initialValues: {
-      name: { nameProp },
-      message: "",
+      name: { name },
+      message: { message },
     },
   });
-  console.log("form values", formik.values.name);
-  name = formik.values.name;
-  message = formik.values.message;
+  setName(formik.values.name);
+  setMessage(formik.values.message);
   console.log("name", name, "message", message);
   return (
     <div>
