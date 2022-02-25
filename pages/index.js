@@ -5,14 +5,10 @@ import React, { useEffect, useState } from "react";
 import Form from "../components/form";
 import { UsuarioProvider, useUsuario } from "../Context/usuario-context";
 
-export default () => <UsuarioProvider>
-  <Home></Home>
-</UsuarioProvider>
+export default function Home() {
 
-function Home() {
-
-  const {username, cantidad,setCantidad,name} = useUsuario()
-  console.log(name.name)
+  const {username, cantidad,setCantidad,name,setSonido} = useUsuario()
+  console.log(name)
   return (
     // Main div
     <div>
@@ -21,7 +17,7 @@ function Home() {
       </Head>
       {/* // Username div */}
       <p>{username}</p>
-      <p>{}</p>
+      <p>{name}</p>
       <Image src={imagePlace} width="100%" height="100%"></Image>
       <div></div>
       {/* // Elements div */}
@@ -70,7 +66,7 @@ function Home() {
         <div>
           {/* // Nombre y Mensaje Div */}
           <div>
-            <Form name={username} />
+            <Form/>
             <p></p>
           </div>
           {/* // Sonidos div */}

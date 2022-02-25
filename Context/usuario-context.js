@@ -8,7 +8,7 @@ export function UsuarioProvider(props) {
   const [cantidad, setCantidad] = useState(10);
   const [sonido, setSonido] = useState("Sound 1");
 
-  const value = useMemo(() => {
+  const value = () => {
     return {
       name,
       setName,
@@ -21,9 +21,13 @@ export function UsuarioProvider(props) {
       sonido,
       setSonido,
     };
-  });
+  };
 
-  return <UsuarioContext.Provider value={value} {...props} />;
+  return (
+    <UsuarioContext.Provider value={value() } {...props}>
+      {props.children}
+    </UsuarioContext.Provider>
+  );
 }
 
 export function useUsuario() {

@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import ReactDom from "react-dom";
 import { useFormik } from "formik";
 import { useUsuario } from "../Context/usuario-context";
 
 function Forms() {
-  var { name, message } = useUsuario();
-  const { setName, setMessage } = useUsuario();
+  const { setName, setMessage, name, message } = useUsuario();
   const formik = useFormik({
     initialValues: {
-      name: { name },
-      message: { message },
+      name: name ,
+      message:  message ,
     },
   });
   setName(formik.values.name);
   setMessage(formik.values.message);
-  console.log("name", name, "message", message);
+  //  console.log("name", name, "message", message);
   return (
     <div>
       <form>
