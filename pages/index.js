@@ -16,6 +16,8 @@ export default function Home() {
         <title>MisFans | Donacion</title>
       </Head>
       {/* // Username div */}
+      <h1 className="text-3xl font-bold underline">hola</h1>
+      <h2>hola</h2>
       <p>{username}</p>
       <p>{name}</p>
       <Image src={imagePlace} width="100%" height="100%"></Image>
