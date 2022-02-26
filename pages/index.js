@@ -31,7 +31,7 @@ export default function Home() {
         {/* // Elements div */}
         <div className="bg-zinc-900 rounded-xl p-4">
           {/* // Dinero div */}
-          <div className="flex border border-slate-800 p-4 grid">
+          <div className="flex border border-zinc-800 p-4 grid">
             {/* // Cantidad div */}
             <div className="grid grid-cols-2 content-start">
               <p className="text-zinc-500 text-xl">$</p>
@@ -79,38 +79,42 @@ export default function Home() {
           <div>
             {/* // Nombre y Mensaje Div */}
             <div>
-              <Form />
+              <Form/>
               <p></p>
             </div>
             {/* // Sonidos div */}
             <div>
-              <h5>Selecciona un sonido</h5>
+              <h5 className="text-sm mt-2 mb-1">Selecciona un sonido</h5>
               {/* // botones sonidos div */}
-              <div>
+              <div className="mt-5 text-center grid grid-cols-4 gap-3">
                 <button
+                className="bg-zinc-700 rounded p-1 hover:bg-zinc-500"
                   onClick={() => {
-                    setSonido("Sound 1");
+                    setSonido("Sonido 1");
                   }}
                 >
                   Sound 1
                 </button>
                 <button
+                className="bg-zinc-700 rounded p-1 hover:bg-zinc-500"
                   onClick={() => {
-                    setSonido("Sound 2");
+                    setSonido("Sonido 2");
                   }}
                 >
                   Sound 2
                 </button>
                 <button
+                className="bg-zinc-700 rounded p-1 hover:bg-zinc-500"
                   onClick={() => {
-                    setSonido("Sound 3");
+                    setSonido("Sonido 3");
                   }}
                 >
                   Sound 3
                 </button>
                 <button
+                className="bg-zinc-700 rounded p-1 hover:bg-zinc-500"
                   onClick={() => {
-                    setSonido("Sound 4");
+                    setSonido("Sonido 4");
                   }}
                 >
                   Sound 4
@@ -118,11 +122,13 @@ export default function Home() {
               </div>
             </div>
             {/* // Pay div */}
-            <div>
-              <button onClick={() => setShowModal(true)}>
+            <div className="">
+              <button
+               className="bg-violet-500 w-full rounded p-2 mt-3 font-semibold"
+               onClick={() => setShowModal(true)}>
                 Pagar {cantidad}.00 mxn
               </button>
-              <p>
+              <p className="text-xs font-thin w-full px-64 mt-1">
                 Al continuar, aceptas nuestros términos de servicio y póliticas
                 de privacidad.
               </p>
