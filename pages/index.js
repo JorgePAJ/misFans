@@ -8,120 +8,134 @@ import { UsuarioProvider, useUsuario } from "../Context/usuario-context";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
-  const { username, cantidad, setCantidad, name, setSonido,message, sonido } = useUsuario();
+  const { username, cantidad, setCantidad, name, setSonido, message, sonido } =
+    useUsuario();
   return (
     // Main div
-    <div>
-      <Head>
-        <title>MisFans | Donacion</title>
-      </Head>
-      {/* // Username div */}
-      <h1 className="text-3xl font-bold underline">hola</h1>
-      <h2>hola</h2>
-      <p>{username}</p>
-      <p>{name}</p>
-      <Image src={imagePlace} width="100%" height="100%"></Image>
-      <div></div>
-      {/* // Elements div */}
-      <div>
-        {/* // Dinero div */}
-        <div>
-          {/* // Cantidad div */}
-          <div>
-            <p>$</p>
-            {/* cantidad seleccionada VARIABLE */}
-            <h2>{cantidad}</h2>
-          </div>
-          {/* // Botones div */}
-          <div>
-            <button
-              onClick={() => {
-                setCantidad(10);
-              }}
-            >
-              $10.00
-            </button>
-            <button
-              onClick={() => {
-                setCantidad(15);
-              }}
-            >
-              $15.00
-            </button>
-            <button
-              onClick={() => {
-                setCantidad(20);
-              }}
-            >
-              $20.00
-            </button>
-            <button
-              onClick={() => {
-                setCantidad(25);
-              }}
-            >
-              $25.00
-            </button>
-          </div>
+    <body className="h-screen bg-zinc-800 text-white">
+      <div className="mx-10 my-10">
+        <Head>
+          <title>MisFans | Donacion</title>
+        </Head>
+        {/* // Username div */}
+
+        <div className="flex items-center p-4">
+          <Image
+            className="rounded-full"
+            src={imagePlace}
+            width="25%"
+            height="25%"
+          ></Image>
+          <p className="mx-2 font-medium">{username}</p>
         </div>
-        {/* //Info div */}
-        <div>
-          {/* // Nombre y Mensaje Div */}
-          <div>
-            <Form />
-            <p></p>
-          </div>
-          {/* // Sonidos div */}
-          <div>
-            <h5>Selecciona un sonido</h5>
-            {/* // botones sonidos div */}
-            <div>
+        {/* // Elements div */}
+        <div className="bg-zinc-900 rounded-xl p-4">
+          {/* // Dinero div */}
+          <div className="flex border border-slate-800 p-4 grid">
+            {/* // Cantidad div */}
+            <div className="grid grid-cols-2 content-start">
+              <p className="text-zinc-500 text-xl">$</p>
+              <p className="text-2xl font-semibold grow w-4 text-center">
+                {cantidad}.00
+              </p>
+            </div>
+            {/* // Botones div */}
+            <div className="mt-10 text-center grid grid-cols-4 gap-3">
               <button
+                className="bg-zinc-700 rounded p-1 hover:bg-zinc-500"
                 onClick={() => {
-                  setSonido("Sound 1");
+                  setCantidad(10.00);
                 }}
               >
-                Sound 1
+                $10.00
               </button>
               <button
+                className="bg-zinc-700 rounded p-1 hover:bg-zinc-500"
                 onClick={() => {
-                  setSonido("Sound 2");
+                  setCantidad(15.00);
                 }}
               >
-                Sound 2
+                $15.00
               </button>
               <button
+                className="bg-zinc-700 rounded p-1 hover:bg-zinc-500"
                 onClick={() => {
-                  setSonido("Sound 3");
+                  setCantidad(20.00);
                 }}
               >
-                Sound 3
+                $20.00
               </button>
               <button
+                className="bg-zinc-700 rounded p-1 hover:bg-zinc-500"
                 onClick={() => {
-                  setSonido("Sound 4");
+                  setCantidad(25.00);
                 }}
               >
-                Sound 4
+                $25.00
               </button>
             </div>
           </div>
-          {/* // Pay div */}
+          {/* //Info div */}
           <div>
-            <button onClick={()=>setShowModal(true)}>Pagar {cantidad} mxn</button>
-            <p>
-              Al continuar, aceptas nuestros términos de servicio y póliticas de
-              privacidad.
-            </p>
-            <Modal show={showModal} onClose={() => setShowModal(false)}>
-              {name}
-              {message}
-              {sonido}
-              {cantidad}
-            </Modal>
+            {/* // Nombre y Mensaje Div */}
+            <div>
+              <Form />
+              <p></p>
+            </div>
+            {/* // Sonidos div */}
+            <div>
+              <h5>Selecciona un sonido</h5>
+              {/* // botones sonidos div */}
+              <div>
+                <button
+                  onClick={() => {
+                    setSonido("Sound 1");
+                  }}
+                >
+                  Sound 1
+                </button>
+                <button
+                  onClick={() => {
+                    setSonido("Sound 2");
+                  }}
+                >
+                  Sound 2
+                </button>
+                <button
+                  onClick={() => {
+                    setSonido("Sound 3");
+                  }}
+                >
+                  Sound 3
+                </button>
+                <button
+                  onClick={() => {
+                    setSonido("Sound 4");
+                  }}
+                >
+                  Sound 4
+                </button>
+              </div>
+            </div>
+            {/* // Pay div */}
+            <div>
+              <button onClick={() => setShowModal(true)}>
+                Pagar {cantidad}.00 mxn
+              </button>
+              <p>
+                Al continuar, aceptas nuestros términos de servicio y póliticas
+                de privacidad.
+              </p>
+              <Modal show={showModal} onClose={() => setShowModal(false)}>
+                {name}
+                {message}
+                {sonido}
+                {cantidad}
+              </Modal>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </body>
   );
 }

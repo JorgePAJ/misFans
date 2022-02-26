@@ -5,7 +5,7 @@ export function UsuarioProvider(props) {
   const [name, setName] = useState("WaberHoruhe");
   const [message, setMessage] = useState("");
   const [username, setUsername] = useState("Jorge Plasencia");
-  const [cantidad, setCantidad] = useState(10);
+  const [cantidad, setCantidad] = useState(10.00);
   const [sonido, setSonido] = useState("Sound 1");
 
   const value = () => {
