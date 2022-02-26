@@ -128,7 +128,7 @@ export default function Home() {
                onClick={() => setShowModal(true)}>
                 Pagar {cantidad}.00 mxn
               </button>
-              <p className="text-xs font-thin w-full px-64 mt-1">
+              <p className="text-xs font-thin w-full text-center mt-1">
                 Al continuar, aceptas nuestros términos de servicio y póliticas
                 de privacidad.
               </p>
