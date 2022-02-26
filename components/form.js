@@ -30,7 +30,7 @@ function Forms() {
         <h5 className="text-sm mt-2 mb-1">Escribe un mensaje</h5>
         <label name="message" type="text" />
         <input
-          className="text-top align-top bg-transparent border pb-24 border-zinc-800 w-full h-32 my-1  placeholder:text-zinc-500"
+          className="text-top pl-1 align-top bg-transparent border pb-24 border-zinc-800 w-full h-32 my-1  placeholder:text-zinc-500"
           type="text"
           id="message"
           name="message"
