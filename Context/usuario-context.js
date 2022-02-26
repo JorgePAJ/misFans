@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState } from "react";
 const UsuarioContext = React.createContext();
 
 export function UsuarioProvider(props) {

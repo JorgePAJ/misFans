@@ -3,12 +3,12 @@ import Image from "next/image";
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import Form from "../components/form";
+import Modal from "../components/modal";
 import { UsuarioProvider, useUsuario } from "../Context/usuario-context";
 
 export default function Home() {
-
-  const {username, cantidad,setCantidad,name,setSonido} = useUsuario()
-  console.log(name)
+  const [showModal, setShowModal] = useState(false);
+  const { username, cantidad, setCantidad, name, setSonido,message, sonido } = useUsuario();
   return (
     // Main div
     <div>
@@ -66,7 +66,7 @@ export default function Home() {
         <div>
           {/* // Nombre y Mensaje Div */}
           <div>
-            <Form/>
+            <Form />
             <p></p>
           </div>
           {/* // Sonidos div */}
@@ -106,11 +106,17 @@ export default function Home() {
           </div>
           {/* // Pay div */}
           <div>
-            <button>Pagar {cantidad} mxn</button>
+            <button onClick={()=>setShowModal(true)}>Pagar {cantidad} mxn</button>
             <p>
               Al continuar, aceptas nuestros términos de servicio y póliticas de
               privacidad.
             </p>
+            <Modal show={showModal} onClose={() => setShowModal(false)}>
+              {name}
+              {message}
+              {sonido}
+              {cantidad}
+            </Modal>
           </div>
         </div>
       </div>
